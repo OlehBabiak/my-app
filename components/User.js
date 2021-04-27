@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         width: width
     },
     tinyLogo: {
-        width: 180,
+        width: 190,
         height: 50
     },
 });
