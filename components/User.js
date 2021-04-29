@@ -1,6 +1,17 @@
-import React from 'react';
-import {FlatList, StyleSheet, Text, View, Button, Image, Alert} from 'react-native';
+import React, {useCallback} from 'react';
+import {Linking, StyleSheet, Text, View, Button, Image, Alert} from 'react-native';
 import { Dimensions } from "react-native";
+
+const supportedURL = "https://lider-shyna.com.ua/";
+const OpenURLButton = ({ url, children }) => {
+    const handlePress = useCallback(async () => {
+
+            await Linking.openURL(url);
+
+    }, [url]);
+
+    return <Button title={children} onPress={handlePress} />;
+};
 
 const width = Dimensions.get('window').width; //full width
 export default function User({item}) {
@@ -18,11 +29,7 @@ export default function User({item}) {
             <Text style={styles.text2}>
                 website: {item.website}
             </Text>
-            <Button
-                title={'press here'}
-                onPress={() => Alert.alert('You press some button')}
-                color="#f194ff"
-            />
+        <OpenURLButton url={supportedURL}>Here is our web-site</OpenURLButton>
         </View>
 
 }

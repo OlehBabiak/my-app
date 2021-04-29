@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import User from "./User";
 
-
+// here is new branch
 export default function FlatLists(styles) {
     const [items, setItems] = useState([])
 
