@@ -2,19 +2,9 @@ import React, {useCallback} from 'react';
 import {Linking, StyleSheet, Text, View, Button, Image, Alert} from 'react-native';
 import { Dimensions } from "react-native";
 
-const supportedURL = "https://lider-shyna.com.ua/";
-const OpenURLButton = ({ url, children }) => {
-    const handlePress = useCallback(async () => {
-
-            await Linking.openURL(url);
-
-    }, [url]);
-
-    return <Button title={children} onPress={handlePress} />;
-};
-
 const width = Dimensions.get('window').width; //full width
-export default function User({item}) {
+export default function User({item, nav}) {
+    console.log('Item: ', item)
     return <View style={[styles.container, styles.item]}>
             <Image
                 style={styles.tinyLogo}
@@ -29,7 +19,9 @@ export default function User({item}) {
             <Text style={styles.text2}>
                 website: {item.website}
             </Text>
-        <OpenURLButton url={supportedURL}>Here is our web-site</OpenURLButton>
+        <Button title={'user details'} onPress={() => {
+            nav.navigate('UsersDetails', {data: item})
+        }}/>
         </View>
 
 }

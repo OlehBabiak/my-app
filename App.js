@@ -1,23 +1,19 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import FlatLists from "./components/FlatList";
+import UsersComponents from "./components/Users/UsersComponents";
+import UserDetailsComponent from "./components/Users/UserDetailsComponent";
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from "@react-navigation/stack";
 
-
-
-
+const StackNavigator = createStackNavigator()
 export default function App() {
   return (
-    <View style={styles.container}>
-      <FlatLists styles={styles}/>
-    </View>
+   <NavigationContainer>
+       <StackNavigator.Navigator>
+           <StackNavigator.Screen name={'Users'} component={UsersComponents}/>
+           {/*<StackNavigator.Screen name={'Posts'} component={PostsComponents}/>*/}
+           <StackNavigator.Screen name={'UsersDetails'} component={UserDetailsComponent}/>
+       </StackNavigator.Navigator>
+   </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#9a9c41',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
