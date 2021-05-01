@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import Photos from "./Photos";
+import getPosts from "./Post";
 import {getPhotos} from "../../src/api/API";
+import Post from "./Post";
 
 // here is new branch
-export default function PhotosComponents(props) {
+export default function PostComponents(props) {
     const {navigation} = props
 
-    let [photos, setPhotos] = useState([])
+    let [posts, setPosts] = useState([])
     async function fetchData() {
-        let photos = await getPhotos()
-        setPhotos([...photos])
+        let posts = await getPhotos()
+        setPosts([...posts])
     }
 
     useEffect(()=> {
@@ -20,9 +21,9 @@ export default function PhotosComponents(props) {
     return (
         <View style={styles.container}>
             <FlatList
-                data={photos}
+                data={posts}
                 renderItem={({item})=>{
-                    return <Photos item={item} nav={navigation}/>
+                    return <Post item={item} nav={navigation}/>
                 }}
                 keyExtractor={(item, index) => index.toString()}
             />
