@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import getPosts from "./Post";
-import {getPhotos} from "../../src/api/API";
+import {getPosts} from "../../src/api/API";
 import Post from "./Post";
 
 // here is new branch
@@ -10,7 +9,7 @@ export default function PostComponents(props) {
 
     let [posts, setPosts] = useState([])
     async function fetchData() {
-        let posts = await getPhotos()
+        let posts = await getPosts()
         setPosts([...posts])
     }
 

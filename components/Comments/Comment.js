@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     item: {
         backgroundColor: '#050405',
         marginBottom: 10,
-        height: 200,
         width: width
     },
     tinyLogo: {
