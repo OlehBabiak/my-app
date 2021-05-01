@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import User from "./User";
-import {getUsers} from "../../src/api/API";
+import Comment from "./Comment";
+import {getComments} from "../../src/api/API";
 
 // here is new branch
 export default function UsersComponents(props) {
     const {navigation} = props
-    let [users, setUsers] = useState([])
 
+    let [comments, setComments] = useState([])
     async function fetchData() {
-        let users = await getUsers()
-        setUsers([...users])
+        let comments = await getComments()
+        setComments([...comments])
     }
 
     useEffect(()=> {
@@ -20,9 +20,9 @@ export default function UsersComponents(props) {
     return (
         <View style={styles.container}>
             <FlatList
-                data={users}
+                data={comments}
                 renderItem={({item})=>{
-                    return <User item={item} nav={navigation}/>
+                    return <Comment item={item} nav={navigation}/>
                 }}
                 keyExtractor={(item, index) => index.toString()}
             />

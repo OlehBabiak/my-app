@@ -4,7 +4,6 @@ import { Dimensions } from "react-native";
 
 const width = Dimensions.get('window').width; //full width
 export default function User({item, nav}) {
-    console.log('Item: ', item)
     return <View style={[styles.container, styles.item]}>
             <Image
                 style={styles.tinyLogo}

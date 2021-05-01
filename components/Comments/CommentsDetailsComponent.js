@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
 
 
@@ -8,13 +8,14 @@ export default function UserDetailsComponent(props) {
     const {route, navigation} = props
     const {data} = route.params
     useEffect(()=> {
-        navigation.setOptions({title: data.name})
+        navigation.setOptions({title: `Comments name: ${data.name}`})
     })
     return (
         <View style={styles.container}>
-            <Text>ID: {data.id}</Text>
+            <Text>Post ID: {data.postId}</Text>
             <Text>Name: {data.name}</Text>
-            <Text>User name: {data.username}</Text>
+            <Text>Email: {data.email}</Text>
+            <Text>Body: {data.body}</Text>
         </View>
     )
 }
