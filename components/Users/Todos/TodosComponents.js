@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {getPosts} from "../../src/api/API";
-import Post from "./Post";
+import {getTodos} from "../../../src/api/API";
+import Todos from "./Todos";
 
 
-export default function PostsComponents(props) {
-    const {navigation} = props
-
-    let [posts, setPosts] = useState([])
+export default function TodosComponents(props) {
+    const {route, navigation} = props
+    const {data} = route.params
+    let [todos, setTodos] = useState([])
     async function fetchData() {
-        let posts = await getPosts()
-        setPosts([...posts])
+        let todos = await getTodos()
+        setTodos([...todos])
     }
 
+    console.log('todos: ',todos)
     useEffect(()=> {
         fetchData()
     }, [])
@@ -20,9 +21,9 @@ export default function PostsComponents(props) {
     return (
         <View style={styles.container}>
             <FlatList
-                data={posts}
+                data={todos}
                 renderItem={({item})=>{
-                    return <Post item={item} nav={navigation}/>
+                    return data.id === item.userId &&  <Todos item={item} nav={navigation}/>
                 }}
                 keyExtractor={(item, index) => index.toString()}
             />
