@@ -1,6 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import { Dimensions } from "react-native";
+import {NavigationContainer} from "@react-navigation/native";
+import AlbumsTabs from "../../AlbumsTabs";
 
 const width = Dimensions.get('window').width; //full width
 export default function Album({item, nav}) {
@@ -19,10 +21,9 @@ export default function Album({item, nav}) {
             <Text style={styles.text2}>
                 Title: {item.title}
             </Text>
-        <Button title={'album details'} onPress={() => {
-            nav.navigate('AlbumsDetails', {data: item})
-        }}/>
-        <Button title={'Photos'} onPress={() => nav.navigate('Photos', {data: item})}/>
+        <NavigationContainer>
+            <AlbumsTabs/>
+        </NavigationContainer>
         </View>
 
 }

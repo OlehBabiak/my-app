@@ -20,9 +20,8 @@ export default function Post({item, nav}) {
                 Body: {item.body}
             </Text>
         <Button title={'post details'} onPress={() => {
-            nav.navigate('PostsDetails', {data: item})
+            nav.navigate('PostScreen')
         }}/>
-        <Button title={'Comments'} onPress={() => nav.navigate('Comments', {data: item})}/>
         </View>
 
 }

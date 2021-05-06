@@ -19,9 +19,9 @@ export default function Todos({item, nav}) {
             <Text style={styles.text2}>
                 Completed: {item.completed.toString()}
             </Text>
-        <Button title={'todo details'} onPress={() => {
-            nav.navigate('TodosDetails', {data: item})
-        }}/>
+        {/*<Button title={'todo details'} onPress={() => {*/}
+        {/*    nav.navigate('TodosDetails', {data: item})*/}
+        {/*}}/>*/}
         </View>
 
 }

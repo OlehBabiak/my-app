@@ -23,7 +23,7 @@ export default function Comments({item, nav}) {
                 Body: {item.body}
             </Text>
         <Button title={'comments details'} onPress={() => {
-            nav.navigate('CommentsDetails', {data: item})
+            nav.navigate('CommentScreen', {data: item})
         }}/>
         </View>
 

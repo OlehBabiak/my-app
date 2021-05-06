@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import { Dimensions } from "react-native";
 
+
 const width = Dimensions.get('window').width; //full width
 export default function User({item, nav}) {
     return <View style={[styles.container, styles.item]}>
@@ -19,11 +20,8 @@ export default function User({item, nav}) {
                 website: {item.website}
             </Text>
         <Button title={'user details'} onPress={() => {
-            nav.navigate('UsersDetails', {data: item})
+            nav.navigate('UserScreen')
         }}/>
-        <Button title={'Posts'} onPress={() => nav.navigate('Posts', {data: item})}/>
-        <Button title={'Albums'} onPress={() => nav.navigate('Albums', {data: item})}/>
-        <Button title={'Todos'} onPress={() => nav.navigate('Todos', {data: item})}/>
         </View>
 
 }
