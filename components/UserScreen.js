@@ -6,7 +6,7 @@ import UsersTabs from "./UsersTabs";
 export default function UserScreen() {
 
     return(
-        <NavigationContainer>
+        <NavigationContainer independent={true}>
             <UsersTabs/>
         </NavigationContainer>
     )
