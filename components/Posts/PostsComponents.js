@@ -3,7 +3,8 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {getPosts} from "../../src/api/API";
 import Post from "./Post";
 
-// here is new branch
+
+
 export default function PostComponents(props) {
     const {navigation} = props
 
