@@ -19,9 +19,9 @@ export default function Post({item, nav}) {
             <Text style={styles.text2}>
                 Body: {item.body}
             </Text>
-        <Button title={'post details'} onPress={() => {
-            nav.navigate('PostScreen')
-        }}/>
+        {/*<Button title={'post details'} onPress={() => {*/}
+        {/*    nav.navigate('PostScreen')*/}
+        {/*}}/>*/}
         </View>
 
 }
