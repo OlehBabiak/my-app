@@ -20,7 +20,7 @@ export default function User({item, nav}) {
                 website: {item.website}
             </Text>
         <Button title={'user details'} onPress={() => {
-            nav.navigate('UserScreen')
+            nav.navigate('UserScreen', {data: item})
         }}/>
         </View>
 

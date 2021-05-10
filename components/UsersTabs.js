@@ -6,7 +6,8 @@ import AlbumsComponents from "../components/Users/Albums/AlbumsComponents"
 import TodosComponents from "../components/Users/Todos/TodosComponents"
 const Tab = createBottomTabNavigator();
 
-export default function UsersTabs() {
+export default function UsersTabs(item) {
+    console.log('User Item', item)
     return (
             <Tab.Navigator>
                 <Tab.Screen name="UsersDetails" component={UserDetailsComponent} />
