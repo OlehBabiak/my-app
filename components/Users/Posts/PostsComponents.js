@@ -5,6 +5,7 @@ import Post from "./Post";
 
 
 export default function PostsComponents(props) {
+    console.log('Post props: ', props)
     const {route, navigation} = props
     const {data} = route.params
     let [posts, setPosts] = useState([])
