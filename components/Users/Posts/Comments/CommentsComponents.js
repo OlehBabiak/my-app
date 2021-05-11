@@ -5,7 +5,7 @@ import Comments from "./Comments";
 
 
 export default function CommentsComponents(props) {
-    const {route, navigation} = props
+    const {route, navigation} = props.item.item.item
     const {data} = route.params
     console.log('DATA: ', data)
     let [comments, setComments] = useState([])

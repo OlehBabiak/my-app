@@ -5,9 +5,9 @@ import Photos from "./Photos";
 
 
 export default function PhotosComponents(props) {
-    const {route, navigation} = props
+    console.log('PhotosProps: ', props)
+    const {route, navigation} = props.item.item.item
     const {data} = route.params
-    console.log('DATA: ', data)
     let [photos, setPhotos] = useState([])
     async function fetchData() {
         let photos = await getPhotos()

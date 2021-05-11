@@ -5,7 +5,7 @@ import Album from "./Album";
 
 
 export default function AlbumsComponents(props) {
-    const {route, navigation} = props
+    const {route, navigation} = props.item.item
     const {data} = route.params
     let [albums, setAlbums] = useState([])
     async function fetchData() {

@@ -3,9 +3,9 @@ import {StyleSheet, Text, View} from 'react-native';
 
 
 
-export default function PostDetailsComponent(props) {
-    console.log('Props: ', props)
-    const {route, navigation} = props
+export default function PostDetailsComponent(item) {
+    console.log('PostProps: ', item.item.item)
+    const {route, navigation} = item.item.item
     const {data} = route.params
     useEffect(()=> {
         navigation.setOptions({title: `Post details of User ID: ${data.userId}`})

@@ -6,8 +6,9 @@ import Post from "./Post";
 
 export default function PostsComponents(props) {
     console.log('Post props: ', props)
-    const {route, navigation} = props
+    const {route, navigation} = props.item.item
     const {data} = route.params
+    console.log('PostRoute ', route)
     let [posts, setPosts] = useState([])
     async function fetchData() {
         let posts = await getPosts()

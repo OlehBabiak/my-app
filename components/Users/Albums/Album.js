@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Button} from 'react-native';
 import { Dimensions } from "react-native";
 
 
@@ -20,7 +20,9 @@ export default function Album({item, nav}) {
             <Text style={styles.text2}>
                 Title: {item.title}
             </Text>
-
+        <Button title={'albums details'} onPress={() => {
+            nav.navigate('AlbumScreen', {data: item})
+        }}/>
         </View>
 
 }

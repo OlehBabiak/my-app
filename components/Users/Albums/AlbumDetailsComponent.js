@@ -3,9 +3,9 @@ import {StyleSheet, Text, View} from 'react-native';
 
 
 
-export default function AlbumDetailsComponent(props) {
-    console.log('Props: ', props)
-    const {route, navigation} = props
+export default function AlbumDetailsComponent(item) {
+    console.log('Props: ', item.item)
+    const {route, navigation} = item.item.item
     const {data} = route.params
     useEffect(()=> {
         navigation.setOptions({title: `Album details of User ID: ${data.userId}`})

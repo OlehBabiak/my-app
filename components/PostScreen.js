@@ -1,12 +1,9 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import PostsTabs from "./PostsTabs";
 
-export default function PostScreen() {
-
+export default function PostScreen(props) {
+    console.log('PostScreen ', props)
     return(
-        <NavigationContainer>
-            <PostsTabs/>
-        </NavigationContainer>
+            <PostsTabs item={props}/>
     )
 }

@@ -1,12 +1,9 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import PhotosTabs from "./PhotosTabs";
 
-export default function PhotoScreen() {
+export default function PhotoScreen(item) {
 
     return(
-        <NavigationContainer>
-            <PhotosTabs/>
-        </NavigationContainer>
+            <PhotosTabs item={item}/>
     )
 }

@@ -1,12 +1,9 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import CommentsTabs from "./CommentsTabs";
 
-export default function CommentScreen() {
+export default function CommentScreen(item) {
 
     return(
-        <NavigationContainer>
-          <CommentsTabs/>
-        </NavigationContainer>
+          <CommentsTabs item={item}/>
     )
 }

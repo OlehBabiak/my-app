@@ -7,7 +7,6 @@ import {getUsers} from "../../src/api/API";
 export default function UsersComponents(props) {
     const {navigation} = props
     let [users, setUsers] = useState([])
-    console.log(users)
     async function fetchData() {
         let users = await getUsers()
         setUsers([...users])

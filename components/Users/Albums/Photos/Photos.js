@@ -1,10 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import { Dimensions } from "react-native";
-import {createStackNavigator} from "@react-navigation/stack";
-import {NavigationContainer} from "@react-navigation/native";
 
-const StackNavigator = createStackNavigator()
+
 const width = Dimensions.get('window').width; //full width
 export default function Photos({item, nav}) {
     console.log('Item: ', item)
@@ -25,6 +23,9 @@ export default function Photos({item, nav}) {
             <Text style={styles.text2}>
                 Thumbnail Url: {item.thumbnailUrl}
             </Text>
+        <Button title={'photos details'} onPress={() => {
+            nav.navigate('PhotoScreen', {data: item})
+        }}/>
         </View>
 
 
