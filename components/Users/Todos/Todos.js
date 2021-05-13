@@ -4,7 +4,7 @@ import { Dimensions } from "react-native";
 
 const width = Dimensions.get('window').width; //full width
 export default function Todos({item, nav}) {
-    console.log('Item: ', item)
+    console.log('TodoItem: ', item)
     return <View style={[styles.container, styles.item]}>
             <Image
                 style={styles.tinyLogo}
@@ -20,7 +20,7 @@ export default function Todos({item, nav}) {
                 Completed: {item.completed.toString()}
             </Text>
         <Button title={'todo details'} onPress={() => {
-            nav.navigate('TodoScreen', {data: item})
+            nav.navigate('TodosDetails', {data: item})
         }}/>
         </View>
 

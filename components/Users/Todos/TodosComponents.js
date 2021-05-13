@@ -5,7 +5,7 @@ import Todos from "./Todos";
 
 
 export default function TodosComponents(props) {
-    const {route, navigation} = props
+    const {route, navigation} = props.item.item
     const {data} = route.params
     let [todos, setTodos] = useState([])
     async function fetchData() {

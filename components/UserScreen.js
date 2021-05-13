@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import UserDetailsComponent from "../components/Users/UserDetailsComponent";
-import TodosComponents from "../components/Users/Todos/TodosComponents"
+import UserDetailsComponent from "./Users/UserDetailsComponent";
 import PostStack from "./PostStack";
 import AlbumStack from "./AlbumStack";
+import TodoStack from "./TodoStack";
 const Tab = createBottomTabNavigator();
 
 export default function UserScreen(item) {
@@ -22,7 +22,7 @@ export default function UserScreen(item) {
                 <AlbumStack item={item}/>
             )} />
             <Tab.Screen name="Todos" children={() => (
-                <TodosComponents item={item}/>
+                <TodoStack item={item}/>
             )} />
         </Tab.Navigator>
     )

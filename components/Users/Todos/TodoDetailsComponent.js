@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 
 export default function TodoDetailsComponent(item) {
-    console.log('Props: ', item)
+    console.log('Props todo: ', item)
     const {route, navigation} = item
     const {data} = route.params
     useEffect(()=> {
