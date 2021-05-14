@@ -1,19 +1,20 @@
 import React from 'react';
 import UsersComponents from "./components/Users/UsersComponents";
-import PostDrawer from "./components/PostDrawer"
 import {NavigationContainer} from "@react-navigation/native";
-import {createDrawerNavigator} from "@react-navigation/drawer";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import CameraComponent from "./components/CameraComponent";
+import PostComponents from "./components/Posts/PostsComponents";
 
-const Drawer = createDrawerNavigator()
+const BottomTabNavigator = createBottomTabNavigator()
 
 export default function App() {
   return (
    <NavigationContainer>
-        <Drawer.Navigator tabBarOptions={{tabStyle: {justifyContent: 'center', alignItems: 'center'}}}>
-            <Drawer.Screen name={'users'} component={UsersComponents}/>
-            <Drawer.Screen name={'PostDrawer'} component={PostDrawer}/>
-        </Drawer.Navigator>
+        <BottomTabNavigator.Navigator tabBarOptions={{tabStyle: {justifyContent: 'center', alignItems: 'center'}}}>
+            <BottomTabNavigator.Screen name={'users'} component={UsersComponents}/>
+            <BottomTabNavigator.Screen name={'Post'} component={PostComponents}/>
+            <BottomTabNavigator.Screen name={'Camera'} component={CameraComponent} options={{unmountOnBlur: true}}/>
+        </BottomTabNavigator.Navigator>
    </NavigationContainer>
   );
 }
-//HW2
