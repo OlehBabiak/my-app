@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PostDetailsComponent from "../components/Users/Posts/PostDetailsComponent"
-import CommentsComponents from "../components/Users/Posts/Comments/CommentsComponents"
 import CommentStack from "./CommentStack";
 const Tab = createBottomTabNavigator();
 
